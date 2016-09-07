@@ -1,0 +1,38 @@
+
+<header class="nowrap">
+
+  <div class="toolbar inline">
+    <h1>{{ conditionReport.ItemGuid }}</h1>
+    <button class="close">Close</button>
+  </div>
+  <!-- <figure>
+    <i class="image" style="background-image: url('http://placehold.it/300x250');"></i>
+  </figure> -->
+
+  <div class="content">
+    <div class="details">
+
+      <!-- <h1 class="title"><a href="#/vehicles/condition/{{ conditionReport.ItemGuid }}" class="modal">{{ conditionReport.ItemGuid }}</a></h1> -->
+      <h1 class="title">{{ conditionReport.ItemGuid }}</h1>
+
+      <h2>{{ conditionReport.Vin }}</h2>
+    </div>
+    <div class="action inline no-wrap">
+
+      <div class="price">
+        <label>Listed:</label>
+        {{ conditionReport.IsActive }}
+      </div>
+
+    </div>
+  </div>
+</header>
+<div class="extended">
+  <section class="body">
+
+    <div ng-include src="'/angular-app/partials/vehicle/condition_report/condition_report_details.html'"></div>
+
+
+
+  </section>
+</div>

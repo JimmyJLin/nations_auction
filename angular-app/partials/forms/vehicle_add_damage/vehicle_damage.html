@@ -1,0 +1,25 @@
+<header class="page-head">
+  <h1>Add Vehicle Damage</h1>
+</header>
+<loading></loading>
+<div class="page form">
+  <form name="addCondtionReport" ng-submit="vm.addCond()" >
+    <section>
+    <ul >
+      <li>
+        <small class="error" ng-show="addCondtionReport.vin.$error.pattern">Please enter a valid VIN Number or Quish VIN Number</small>
+        <input name="vin" class="large" type="text" ng-model="vm.vin" placeholder="Vehicle VIN Number" ng-pattern="vm.VIN_REGEXP" required/>
+
+      </li>
+      <li>
+        <!-- <a class="btn" ng-href="#/vehicle/addcondition_step2">Next</button> -->
+        <!-- <button type="submit" class="btn" id="addConditionButton">Next</button> -->
+      </li>
+    </ul>
+    </section>
+  </form>
+
+  <div id="damage_details">
+    <div ng-include src="'/angular-app/partials/forms/add_vehicle_condition/addcondition_damage.html'"></div>
+  </div>
+</div>

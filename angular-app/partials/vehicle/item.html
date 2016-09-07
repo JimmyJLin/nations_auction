@@ -1,0 +1,96 @@
+
+<header class="nowrap">
+  <div class="toolbar inline">
+    <h1>{{ vehicle.Year }} {{ vehicle.Make }} {{ vehicle.Model }} {{ vehicle.Type }}</h1>
+    <button class="close">Close</button>
+  </div>
+
+  <figure>
+    <i class="image" style="background-image: url('http://placehold.it/300x250');"></i>
+  </figure>
+
+  <div class="content">
+    <div class="details">
+      <h1 class="title"><a href="#/vehicles/{{ vehicle.ItemGuid }}" class="modal">{{ vehicle.Year }} {{ vehicle.Make }} {{ vehicle.Model }} {{ vehicle.Type }}</a></h1>
+<!--      <h1 class="title">{{ vehicle.Year }} {{ vehicle.Make }} {{ vehicle.Model }} {{ vehicle.Type }}</h1>-->
+
+      <h2>{{ vehicle.Miles }} miles &middot; {{ vehicle.Drive }} &middot; {{ vehicle.Transmission }} &middot; {{ vehicle.Color }} &middot; {{ vehicle.Engine }}</h2>
+    </div>
+    <div class="action inline no-wrap">
+
+      <div class="price">
+        <label>Current Price:</label>
+        {{ vehicle.Price }}
+      </div>
+      <div class="expires">
+        <label>Ends</label>
+        <time datetime="{{vehicle.Expires }}" data-countdown="{{ vehicle.Expires | date: '%Y/%m/%d %H:%M:%S' }}">{{ vehicle.Expires | date: '%Hh %Mm %Ss' }}</time>
+      </div>
+      <div class="bids">
+        <label>Bids</label>
+        {{ vehicle.CurrentBids }}
+      </div>
+
+      <div class="buttons inline no-wrap">
+        <button class="bid">Bid</button>
+        <button class="watch watching">Watching</button>
+<!--        <button class="watch">Watch</button>-->
+      </div>
+
+
+
+    </div>
+  </div>
+</header>
+
+    <!-- <ul data-tabset="na-{{ vehicle.ItemGuid }}-desc" class="htabs flex">
+      <li class=""><a href="#na-{{ vehicle.ItemGuid }}-desc">Description</a></li>
+      <li><a href="#na-{{ vehicle.ItemGuid }}-options">Options</a></li>
+      <li><a href="#na-{{ vehicle.ItemGuid }}-cr">Condition Report</a></li>
+      <li><a href="#na-{{ vehicle.ItemGuid }}-notes">Notes</a></li>
+    </ul> -->
+
+
+    <my-tabs>
+      <my-pane title="Description">
+        <div class="pane">
+          <div ng-include src="'/angular-app/partials/vehicle/tabs-partials/itemDescription.html'"></div>
+        </div>
+      </my-pane>
+      <my-pane title="Options">
+        <div class="pane">
+          <div ng-include src="'/angular-app/partials/vehicle/tabs-partials/itemOptions.html'"></div>
+        </div>
+      </my-pane>
+      <my-pane title="Condition Report">
+        <div class="pane">
+          <div ng-include src="'/angular-app/partials/vehicle/tabs-partials/itemConditionReport.html'"></div>
+        </div>
+      </my-pane>
+      <my-pane title="Notes">
+        <div class="pane">
+          <div ng-include src="'/angular-app/partials/vehicle/tabs-partials/itemNotes.html'"></div>
+        </div>
+      </my-pane>
+
+      <my-pane title="Add Condition">
+        <div class="pane">
+          <div ng-include src="'/angular-app/partials/vehicle/tabs-partials/itemAddConditionReport.html'"></div>
+        </div>
+      </my-pane>
+
+      <my-pane title="Add Damage">
+        <div class="pane">
+          <div ng-include src="'/angular-app/partials/vehicle/tabs-partials/itemAddDamages.html'"></div>
+        </div>
+      </my-pane>
+
+      <my-pane title="Add Pricing">
+        <div class="pane">
+          <div ng-include src="'/angular-app/partials/forms/vehicle_pricing/vehicle_pricing.html'"></div>
+        </div>
+      </my-pane>
+    </my-tabs>
+
+  </section>
+</div>

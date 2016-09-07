@@ -1,0 +1,156 @@
+
+<div ng-controller= "VehicleDetailsController as vm">
+  <header class="nowrap">
+
+  <figure>
+    <i class="image" style="background-image: url('http://placehold.it/300x250');"></i>
+  </figure>
+
+  <div class="content">
+    <div class="details">
+      <h1 class="title"><a href="#/vehicles/{{ vehicle.ItemGuid }}" class="modal">{{ vm.vehicle.Year }} {{ vm.vehicle.Make }} {{ vm.vehicle.Model }} {{ vm.vehicle.Type }}</a></h1>
+<!--      <h1 class="title">{{ vm.vehicle.Year }} {{ vm.vehicle.Make }} {{ vm.vehicle.Model }} {{ vm.vehicle.Type }}</h1>-->
+
+      <h2>{{ vm.vehicle.Miles }} miles &middot; {{ vm.vehicle.Drive }} &middot; {{ vm.vehicle.Transmission }} &middot; {{ vm.vehicle.Color }} &middot; {{ vm.vehicle.Engine }}</h2>
+    </div>
+    <div class="action inline no-wrap">
+
+      <div class="price">
+        <label>Current Price:</label>
+        {{ vm.vehicle.Price }}
+      </div>
+      <div class="expires">
+        <label>Ends</label>
+        <time datetime="{{vm.vehicle.Expires }}" data-countdown="{{ vm.vehicle.Expires | date: '%Y/%m/%d %H:%M:%S' }}">{{ vm.vehicle.Expires | date: '%Hh %Mm %Ss' }}</time>
+      </div>
+      <div class="bids">
+        <label>Bids</label>
+        {{ vm.vehicle.CurrentBids }}
+      </div>
+
+      <div class="buttons inline no-wrap">
+        <button class="bid">Bid</button>
+        <button class="watch watching">Watching</button>
+<!--        <button class="watch">Watch</button>-->
+      </div>
+
+
+
+    </div>
+  </div>
+</header>
+  <div class="extended">
+  <section class="body">
+
+    <!-- <ul data-tabset="na-{{ vehicle.ItemGuid }}-desc" class="htabs flex">
+      <li class=""><a href="#na-{{ vehicle.ItemGuid }}-desc">Description</a></li>
+      <li><a href="#na-{{ vehicle.ItemGuid }}-options">Options</a></li>
+      <li><a href="#na-{{ vehicle.ItemGuid }}-cr">Condition Report</a></li>
+      <li><a href="#na-{{ vehicle.ItemGuid }}-notes">Notes</a></li>
+    </ul> -->
+
+
+    <my-tabs>
+      <my-pane title="Description">
+        <div class="pane">
+          <div ng-include src="'angular-app/partials/vehicle/tabs-partials/itemDescription.html'"></div>
+        </div>
+      </my-pane>
+      <my-pane title="Options">
+        <div class="pane">
+          <div ng-include src="'angular-app/partials/vehicle/tabs-partials/itemOptions.html'"></div>
+        </div>
+      </my-pane>
+      <my-pane title="Condition Report">
+        <div class="pane">
+          <div ng-include src="'angular-app/partials/vehicle/tabs-partials/itemConditionReport.html'"></div>
+        </div>
+      </my-pane>
+      <my-pane title="Notes">
+        <div class="pane">
+          <div ng-include src="'angular-app/partials/vehicle/tabs-partials/itemNotes.html'"></div>
+        </div>
+      </my-pane>
+
+      <my-pane title="Add Condition">
+        <div class="pane">
+          <div ng-include src="'angular-app/partials/vehicle/tabs-partials/itemAddConditionReport.html'"></div>
+        </div>
+      </my-pane>
+
+      <my-pane title="Add Damage">
+        <div class="pane">
+          <div ng-include src="'angular-app/partials/vehicle/tabs-partials/itemAddDamages.html'"></div>
+        </div>
+      </my-pane>
+
+      <my-pane title="Add Pricing">
+        <div class="pane">
+          <div ng-include src="'angular-app/partials/forms/vehicle_pricing/vehicle_pricing.html'"></div>
+        </div>
+      </my-pane>
+    </my-tabs>
+
+  </section>
+</div>
+  <!--
+  <ul>
+    <li>Item Id: {{ vm.vehicle.ItemGuid }} </li>
+    <li>Item Name: {{ vm.vehicle.ItemName }} </li>
+    <li>Date Created: {{ vm.vehicle.DateCreated }} </li>
+    <li>Date Last Modified: {{ vm.vehicle.DateLastModified }} </li>
+    <li>IsActive: {{ vm.vehicle.IsActive }} </li>
+    <li>Notes: {{ vm.vehicle.Notes }} </li>
+    <li>Vin: {{ vm.vehicle.VIN }} </li>
+    <li>Year: {{vm.vehicle.Year}} </li>
+    <li>Make: {{vm.vehicle.Make}} </li>
+    <li>Model: {{vm.vehicle.Model}} </li>
+    <li>Body Type: {{vm.vehicle.BodyType}} </li>
+    <li>Description: {{vm.vehicle.Description}} </li>
+    <li>Price: {{vm.vehicle.Price}} </li>
+    <li>Owner: {{vm.vehicle.OwnerGuid}} </li>
+    <li>Trim: {{vm.vehicle.Trim}} </li>
+    <li>Body Style: {{vm.vehicle.BodyStyle}} </li>
+    <li>Vehicle Style: {{vm.vehicle.VehicleStyle}} </li>
+    <li>Vehicle Type: {{vm.vehicle.VehicleType}} </li>
+    <li>Item Number: {{vm.vehicle.ItemNumber}} </li>
+    <li>Mileage: {{vm.vehicle.Mileage}} </li>
+    <li>Location: {{vm.vehicle.Location}} </li>
+    <li>Inventory Status: {{vm.vehicle.InventoryStatus}} </li>
+    <li>Date Added: {{ vm.vehicle.DateAdded }} </li>
+    <li>Exterior Color: {{vm.vehicle.ExteriorColor}} </li>
+    <li>Interior Color: {{vm.vehicle.InteriorColor}} </li>
+    <li>Search Color: {{vm.vehicle.SearchColor}} </li>
+    <li>Seat Cover: {{vm.vehicle.SeatCovering}} </li>
+    <li>Door: {{vm.vehicle.DoorCount}} </li>
+    <li>Engine: {{vm.vehicle.Engine}} </li>
+    <li>Transmission: {{vm.vehicle.Transmission}} </li>
+    <li>Drivetrain: {{vm.vehicle.Drivetrain}} </li>
+    <li>FuelType: {{vm.vehicle.FuelType}} </li>
+    <li>Brakes: {{vm.vehicle.Brakes}} </li>
+    <li>Title Status: {{vm.vehicle.TitleStatus}} </li>
+    <li>Title State: {{vm.vehicle.TitleState}} </li>
+    <li>Full Warranty: {{vm.vehicle.FullWarranty}} </li>
+    <li>Drivetrain Warranty: {{vm.vehicle.DrivetrainWarranty}} </li>
+    <li>Additional Warranty: {{vm.vehicle.AdditionalWarranty}} </li>
+    <li>Certified PreOwned: {{vm.vehicle.CertifiedPreOwned}} </li>
+    <li>Guaranteed Financing: {{vm.vehicle.GuaranteedFinancing}} </li>
+    <ul>
+      <li>Interior Options: {{vm.vehicle.InteriorOptions}} </li>
+    </ul>
+    <ul>
+      <li>Exterior Options: {{vm.vehicle.ExteriorOptions}} </li>
+    </ul>
+    <ul>
+      <li>Premium Options: {{vm.vehicle.PremiumOptions}} </li>
+    </ul>
+    <ul>
+      <li>TruckOptions: {{vm.vehicle.TruckOptions}} </li>
+    </ul>
+    <ul>
+      <li>CustomOptions: {{vm.vehicle.CustomOptions}} </li>
+    </ul>
+
+  </ul>
+  -->
+</div>

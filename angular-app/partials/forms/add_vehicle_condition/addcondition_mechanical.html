@@ -1,0 +1,112 @@
+  <form name="addCondtionReport" ng-submit="vm.addCond()" >
+  <section>
+  <h2>Add Mechanical Details</h2>
+    <ul class="cols-2">
+      <li class="dropdown">
+        <label>Engine</label>
+        <select name="engine" class="na-select" ng-model="vm.engine" id="select_year_min" required>
+          <option value="" selected>Select Engine Damage</option>
+          <option value="No Damage">No Damage</option>
+          <option value="Runs Rough">Runs Rough</option>
+          <option value="Leaks Oil">Leaks Oil</option>
+          <option value="Needs Tune Up">Needs Tune Up</option>
+          <option value="Needs Major Repair">Needs Major Repair</option>
+          <option value="Needs Rebuilt">Needs Rebuilt</option>
+        </select>
+        <small class="error" ng-show="addCondtionReport.engine.$error.required">This field is required and cannot be left blank</small>
+      </li>
+      <li class="dropdown">
+        <label>Transmission</label>
+        <select name="transmission" class="na-select" ng-model="vm.transmission" id="select_year_min" required>
+          <option value="" selected>Select Transmission Damage</option>
+          <option value="No Damage">No Damage</option>
+          <option value="Slips">Slips</option>
+          <option value="Makes Noise">Makes Noise</option>
+          <option value="Needs Major Repair">Needs Major Repair</option>
+          <option value="Needs Replaced">Needs Replaced</option>
+        </select>
+        <small class="error" ng-show="addCondtionReport.transmission.$error.required">This field is required and cannot be left blank</small>
+
+      </li>
+      <li class="dropdown">
+        <label>Exhaust</label>
+        <select name="exhaust" class="na-select" ng-model="vm.exhaust" id="select_year_min" required>
+          <option value="" selected>Select Exhaust Damage</option>
+          <option value="No Damage">No Damage</option>
+          <option value="Needs Major Repair">Needs Major Repair</option>
+          <option value="Needs Replaced">Needs Replaced</option>
+        </select>
+        <small class="error" ng-show="addCondtionReport.exhaust.$error.required">This field is required and cannot be left blank</small>
+
+      </li>
+      <li class="dropdown">
+        <label>Brakes</label>
+        <select name="brakes" class="na-select" ng-model="vm.brakes" id="select_year_min" required>
+          <option value="" selected>Select Brakes Damage</option>
+          <option value="No Damage">No Damage</option>
+          <option value="Soft">Soft</option>
+          <option value="Makes Noise">Makes Noise</option>
+          <option value="Needs Pads">Needs Pads</option>
+          <option value="Needs Rotors">Needs Rotors</option>
+          <option value="Needs Major Repair">Needs Major Repair</option>
+        </select>
+        <small class="error" ng-show="addCondtionReport.brakes.$error.required">This field is required and cannot be left blank</small>
+
+      </li>
+      <li class="dropdown">
+        <label>A/C</label>
+        <select name="a_c" class="na-select" ng-model="vm.ac" id="select_year_min" required>
+          <option value="" selected>elect A/C Damage</option>
+          <option value="No Damage">No Damage</option>
+          <option value="No A/C">No A/C</option>
+          <option value="Needs Recharge">Needs Recharge</option>
+          <option value="Needs Major Repair">Needs Major Repair</option>
+        </select>
+        <small class="error" ng-show="addCondtionReport.a_c.$error.required">This field is required and cannot be left blank</small>
+
+      </li>
+      <li class="dropdown">
+        <label>Battery</label>
+        <select name="battery" class="na-select" ng-model="vm.battery" id="select_year_min" required>
+          <option value="" selected>elect Battery Damage</option>
+          <option value="No Damage">No Damage</option>
+          <option value="Weak">Weak</option>
+          <option value="Needs Replaced">Needs Replaced</option>
+        </select>
+        <small class="error" ng-show="addCondtionReport.battery.$error.required">This field is required and cannot be left blank</small>
+
+      </li>
+      <li class="dropdown">
+        <label>Oil Changed</label>
+        <select name="oil_changed" class="na-select" ng-model="vm.oilChanged" id="select_year_min" required>
+          <option value="" selected>Oil Changed</option>
+          <option value="1">Yes</option>
+          <option value="2">No</option>
+        </select>
+        <small class="error" ng-show="addCondtionReport.oil_changed.$error.required">This field is required and cannot be left blank</small>
+
+      </li>
+
+      <li class="dropdown">
+        <label>Fuel Level</label>
+        <select name="fuel_level" class="na-select" ng-model="vm.fuelLevel" id="select_year_min" required>
+          <option value="" selected>Select Full Level</option>
+          <option value="Unknown">Unknown</option>
+          <option value="Full">Full</option>
+          <option value="3/4">3/4</option>
+          <option value="1/2">1/2</option>
+          <option value="1/4">1/4</option>
+          <option value="Empty">Empty</option>
+        </select>
+        <small class="error" ng-show="addCondtionReport.fuel_level.$error.required">This field is required and cannot be left blank</small>
+
+      </li>
+<!--      <li class="full footer">
+        <button type="submit" class="btn" id="addConditionMechanical">Next</button>
+
+        <!-- <a class="btn" ng-href="#/vehicle/addcondition_step4">Next</button> --*>
+
+      </li>-->
+    </ul>
+</section>
+  </form>

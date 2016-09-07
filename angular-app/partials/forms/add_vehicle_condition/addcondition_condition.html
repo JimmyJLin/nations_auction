@@ -1,0 +1,111 @@
+<form name="addCondtionReport" ng-submit="vm.addCond()" >
+<section>
+  <h2>Add Condition Details</h2>
+  <ul class="cols-2">
+    <li class="dropdown">
+      <label>Grade</label>
+      <select name="grade" class="na-select" ng-model="vm.grade" id="select_year_min" required>
+        <option value="" selected>Select Grade</option>
+        <option value="1">5 - Excellent</option>
+        <option value="2">4 - Very Good</option>
+        <option value="3">3 - Good</option>
+        <option value="4">2 - Fair</option>
+        <option value="5">1 - Poor</option>
+        <option value="6">0 - Heavy Damage</option>
+      </select>
+      <small class="error" ng-show="addCondtionReport.grade.$error.required">This field is required and cannot be left blank</small>
+
+    </li>
+
+    <li class="dropdown">
+      <label>Recondition</label>
+      <select name="recondition" class="na-select" ng-model="vm.recondition" id="select_year_min" required>
+        <option value="" selected>Recondition</option>
+        <option value="1">Yes</option>
+        <option value="2">No</option>
+      </select>
+      <small class="error" ng-show="addCondtionReport.recondition.$error.required">This field is required and cannot be left blank</small>
+
+    </li>
+
+    <li class="dropdown">
+      <label>Detailed</label>
+      <select name="detailed" class="na-select" ng-model="vm.detail" id="select_year_min" required>
+        <option value="" selected>Detailed</option>
+        <option value="1">Yes</option>
+        <option value="2">No</option>
+      </select>
+      <small class="error" ng-show="addCondtionReport.detailed.$error.required">This field is required and cannot be left blank</small>
+
+    </li>
+
+    <li class="dropdown">
+      <label>Frame Damage</label>
+      <select name="frame_damage" class="na-select" ng-model="vm.frameDamage" id="select_year_min" required>
+        <option value="" selected>Frame Damage</option>
+        <option value="1">Yes</option>
+        <option value="2">No</option>
+      </select>
+      <small class="error" ng-show="addCondtionReport.frame_damage.$error.required">This field is required and cannot be left blank</small>
+
+    </li>
+
+    <li class="dropdown">
+      <label>Previously Repainted</label>
+      <select name="repainted" class="na-select" ng-model="vm.previouslyRepainted" id="select_year_min" required>
+        <option value="" selected>Previously Repainted</option>
+        <option value="1">Yes</option>
+        <option value="2">No</option>
+      </select>
+      <small class="error" ng-show="addCondtionReport.repainted.$error.required">This field is required and cannot be left blank</small>
+
+    </li>
+
+    <li class="dropdown">
+      <label>Hail Damage</label>
+      <select name="hail_damage" class="na-select" ng-model="vm.hailDamage" id="select_year_min" required>
+        <option value="" selected>Hail Damage</option>
+        <option value="1">Yes</option>
+        <option value="2">No</option>
+      </select>
+      <small class="error" ng-show="addCondtionReport.hail_damage.$error.required">This field is required and cannot be left blank</small>
+
+    </li>
+
+    <li class="dropdown">
+      <label>Damage</label>
+      <select name="damage" class="na-select" ng-model="vm.damage" id="select_year_min" required>
+        <option value="" selected>Damage</option>
+        <option value="1">Yes</option>
+        <option value="2">No</option>
+      </select>
+      <small class="error" ng-show="addCondtionReport.damage.$error.required">This field is required and cannot be left blank</small>
+
+    </li>
+
+    <li class="dropdown">
+      <label>Vehicle Drives</label>
+      <select name="drives" class="na-select" ng-model="vm.vehicleDrive" id="select_year_min" required>
+        <option value="" selected>Vehicle Drives</option>
+        <option value="1">Yes</option>
+        <option value="2">No</option>
+      </select>
+      <small class="error" ng-show="addCondtionReport.drives.$error.required">This field is required and cannot be left blank</small>
+
+    </li>
+  </ul>
+  <h3>Dash Lights</h3>
+  <ul class="cols-3">
+    <li ng-repeat="dashLightOption in dashLightOptions">
+      <input type="checkbox" checklist-model="vm.dashLightOptions" checklist-value="dashLightOption" /> <label for="">{{dashLightOption}}</label>
+    </li>
+  </ul>
+
+
+   <!-- <li class="full footer">
+      <a class="btn" ng-href="#/vehicle/addcondition_step3">Next</button>
+      <button type="submit" class="btn" id="addConditionBasics">Next</button>
+
+    </li> -->
+</section>
+</form>

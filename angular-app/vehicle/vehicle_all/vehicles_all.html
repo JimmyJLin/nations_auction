@@ -1,0 +1,15 @@
+<header class="page-head">
+  <h1>{{ vm.title }} <small>{{vehicles.length}}</small></h1>
+</header>
+<loading></loading>
+<section class="mdview">
+  <section class="detail">
+    <div class="list">
+      <ul>
+        <li ng-repeat="vehicle in vehicles  track by $index">
+          <div class="item vehicle" ng-include src="'/angular-app/partials/vehicle/item.html'"></div>
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>

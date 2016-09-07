@@ -1,0 +1,124 @@
+<header class="page-head">
+  <h1>{{ vm.title }} <small>{{vehicles.length}}</small></h1>
+</header>
+<loading></loading>
+<section class="mdview">
+  <section class="master">
+    <section>
+      <section class="form open">
+        <h4 tabindex="-1">Filters</h4>
+        <ul>
+        <li class="dropdown">
+          <label>Filter by Year</label>
+          <select class="na-select" ng-model="search.Year">
+            <option value="Year" selected>Year</option>
+            <option value="2004">2004</option>
+            <option value="2005">2005</option>
+            <option value="2012">2012</option>
+            <option value="2013">2013</option>
+            <option value="2014">2014</option>
+            <option value="2017">2017</option>
+          </select>
+        </li>
+        <li class="dropdown">
+          <label>Make</label>
+          <select class="na-select" ng-model="search.Make">
+            <option value="" selected>All</option>
+            <option value="Toyota">Toyota</option>
+            <option value="Ford">Ford</option>
+            <option value="Chevrolet">Chevrolet</option>
+          </select>
+        </li>
+        <li class="dropdown">
+          <label>Vehicle Type</label>
+          <select class="na-select" ng-model="search.VehicleType">
+            <option value="">All</option>
+            <option value="New">New</option>
+            <option value="Used">Used</option>
+            <option value="Certified%Pre-Owned">Certified Pre-Owned</option>
+            <option value="Salvage">Salvage</option>
+          </select>
+        </li>
+        <li class="dropdown">
+          <label>Inventory Status</label>
+          <select class="na-select" ng-model="search.InventoryStatus">
+            <option value="">All</option>
+            <option value="Not Ready to List">Not Ready to List</option>
+            <option value="Reconditioning">Reconditioning</option>
+            <option value="In Detail">In Detail</option>
+            <option value="Needs Photos">Needs Photos</option>
+            <option value="Needs Condition Report">Needs Condition Report</option>
+            <option value="Needs Pricing">Needs Pricing</option>
+            <option value="Ready to List">Ready to List</option>
+            <option value="In Marketplace">In Marketplace</option>
+            <option value="Sold">Sold</option>
+            <option value="Unsold">Unsold</option>
+            <option value="Loaner/Dealership Vehicle">Loaner/Dealership Vehicle</option>
+            <option value="Off Site">Off Site</option>
+          </select>
+        </li>
+
+        <!-- Marketplace Status -->
+        <!-- <select class="na-select" ng-model="search.IsActive">
+          <option value="">All</option>
+          <option value="true">In Market</option>
+          <option value="false">Not in the Market</option>
+        </select> -->
+      </ul>
+      </section>
+      <section class="form">
+        <h4 tabindex="-1">Search</h4>
+        <ul>
+          <li><input placeholder="Vin" type="text" ng-model="search.VIN" /></li>
+          <li><input placeholder="Year" type="text" ng-model="search.Year" /></li>
+          <li><input placeholder="Item Number" type="text" ng-model="search.ItemGuid" /></li>
+          <li><input placeholder="Make" type="text" ng-model="search.Make" /></li>
+          <li><input placeholder="Model" type="text" ng-model="search.Model" /></li>
+        </ul>
+      </section>
+      <section class="form">
+        <h4 tabindex="-1">Sort</h4>
+        <ul>
+          <li class="dropdown">
+            <label>Sort By</label>
+            <select class="na-select" ng-model="sortBy">
+              <option value="Year" selected>Year</option>
+              <option value="Make">Make</option>
+              <option value="Model">Model</option>
+            </select>
+          </li>
+        </ul>
+      </section>
+    </section>
+  </section>
+  <section class="detail list">
+
+
+    <!--  <section>
+        <ul>
+          <li ng-repeat="vehicle in vehicles">
+            <div class="item vehicle" ng-include src="'angular-app/partials/vehicle/item.html'"></div>
+          </li>
+        </ul>
+      </section>-->
+
+      <section>
+        <h2>Unlisted <small>{{notActiveList.length}}</small></h2>
+        <ul>
+          <li ng-repeat="vehicle in vehicles | filter: {IsActive:false, VIN:search.VIN, Year:search.Year, ItemGuid:search.ItemGuid, Make: search.Make, Model: search.Model, VehicleType:search.VehicleType, InventoryStatus:search.InventoryStatus } | orderBy:sortBy  as notActiveList">
+            <div class="item vehicle" ng-include src="'/angular-app/partials/vehicle/item.html'"></div>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h2>Listed <small>{{activeList.length}}</small></h2>
+        <ul>
+          <li ng-repeat="vehicle in vehicles | filter: {
+            IsActive:true, VIN:search.VIN, Year:search.Year,  ItemGuid:search.ItemGuid , Make: search.Make, Model: search.Model, VehicleType:search.VehicleType, InventoryStatus:search.InventoryStatus ,  IsActive:search.IsActive }  | orderBy:sortBy as activeList">
+            <div class="item vehicle" ng-include src="'/angular-app/partials/vehicle/item.html'"></div>
+          </li>
+        </ul>
+      </section>
+
+  </section>
+</section>

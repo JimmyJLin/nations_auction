@@ -1,0 +1,183 @@
+<form ng-submit="vm.editVehicle()" ng-show="show">
+
+<section>
+  <h4>Vehicle Overview</h4>
+  <!-- Add Vehicle -->
+  <ul class="cols-2">
+    <li class="input">
+      <label>VIN</label>
+      <input type="text" name="vin" ng-model="vm.vin" ng-value = "vehicle.VIN" placeholder="{{ vehicle.VIN }}" required/>
+    </li>
+    <li class="dropdown">
+      <label>Year</label>
+      <select class="na-select" ng-model="vm.year" required>
+        <option ng-value="{{vehicle.Year}}" selected> {{vehicle.Year}} </option>
+        <option ng-value="2017">2017</option>
+        <option ng-value="2016">2016</option>
+        <option ng-value="2015">2015</option>
+        <option ng-value="2014">2014</option>
+        <option ng-value="2013">2013</option>
+        <option ng-value="2012">2012</option>
+        <option ng-value="2011">2011</option>
+        <option ng-value="2010">2010</option>
+      </select>
+    </li>
+    <li class="dropdown">
+      <label>Make</label>
+      <select class="na-select"  ng-model="vm.make" required>
+        <option ng-value="{{vehicle.Make}}" selected> {{vehicle.Make}} </option>
+        <option value="1">Make 1</option>
+        <option value="2">Make 2</option>
+        <option value="3">Make 3</option>
+        <option value="4">Make 4</option>
+        <option value="5">Make 5</option>
+        <option value="6">Make 6</option>
+        <option value="7">Make 7</option>
+        <option value="8">Make 8</option>
+      </select>
+    </li>
+    <li class="dropdown">
+      <label>Model</label>
+      <select class="na-select" ng-model="vm.model" required>
+        <option ng-value="{{vehicle.Model}}" selected> {{vehicle.Model}} </option>
+        <option value="1">Model 1</option>
+        <option value="2">Model 2</option>
+        <option value="3">Model 3</option>
+        <option value="4">Model 4</option>
+        <option value="5">Model 5</option>
+        <option value="6">Model 6</option>
+        <option value="7">Model 7</option>
+        <option value="8">Model 8</option>
+      </select>
+    </li>
+    <!-- <li class="dropdown">
+      <label>Vehicle Style</label>
+      <select class="na-select" ng-model="vm.vehicleStyle" required>
+        <option ng-value="{{vehicle.VehicleStyle}}" selected> {{vehicle.VehicleStyle}} </option>
+        <option value="SUV">SUV</option>
+        <option value="Sedan">Sedan</option>
+        <option value="Regular Cab Pickup">Regular Cab Pickup</option>
+        <option value="Extended Cab Pickup">Extended Cab Pickup</option>
+        <option value="Crew Cab Pickup">Crew Cab Pickup</option>
+        <option value="Convertible">Convertible</option>
+        <option value="Coupe">Coupe</option>
+        <option value="Hatchback">Hatchback</option>
+        <option value="Wagon">Wagon</option>
+        <option value="Minivan">Minivan</option>
+        <option value="Passenger Van">Passenger Van</option>
+        <option value="Cargo Van">Cargo Van</option>
+      </select>
+    </li> -->
+    <li class="dropdown">
+      <label>Vehicle Type</label>
+      <select class="na-select" ng-model="vehicle.VehicleType" required>
+        <option value="">Select Vehicle Type</option>
+        <option value="New">New</option>
+        <option value="Used">Used</option>
+        <option value="Certified Pre-Owned">Certified Pre-Owned</option>
+        <option value="Salvage">Salvage</option>
+      </select>
+    </li>
+    <li class="input">
+      <label>Item Number</label>
+      <input type="text" ng-model="vm.itemNo" ng-value="vehicle.ItemNumber" placeholder="Item Number" required/>
+    </li>
+    <li class="input">
+      <label>Mileage</label>
+      <input type="text" ng-model="vm.mileage" ng-value="vehicle.Milage" placeholder="Mileage" required/>
+    </li>
+    <li class="dropdown">
+      <label>Location</label>
+      <select class="na-select" ng-model="vm.location" ng-value="vehicle.Location" required>
+        <option value="">Select Company Location</option>
+        <option value="617a69c3-bd34-445c-a762-1bbcf228f7bb" selected>Company Address</option>
+      </select>
+    </li>
+    <li class="dropdown">
+      <label>Inventory Status </label>
+      <select class="na-select" ng-model="vm.inventoryStatus" required>
+        <option value="vehicle.InventoryStatus">{{vehicle.InventoryStatus}}</option>
+        <option value="Not Ready to List">Not Ready to List</option>
+        <option value="Reconditioning">Reconditioning</option>
+        <option value="In Detail">In Detail</option>
+        <option value="Needs Photos">Needs Photos</option>
+        <option value="Needs Condition Report">Needs Condition Report</option>
+        <option value="Needs Pricing">Needs Pricing</option>
+        <option value="Ready to List">Ready to List</option>
+        <option value="In Marketplace">In Marketplace</option>
+        <option value="Sold">Sold</option>
+        <option value="Unsold">Unsold</option>
+        <option value="Loaner/Dealership Vehicle">Loaner/Dealership Vehicle</option>
+        <option value="Off Site">Off Site</option>
+      </select>
+    </li>
+    <li class="input">
+      <label>Date Added</label>
+      <input type="date" ng-model="vm.dateAdded" ng-value="vehicle.DateAdded" required/>
+    </li>
+    <li>
+      <!-- <label>Availability</label>
+      <input type="text" ng-model="vm.availability" ng-value="vm.availability" placeholder="Availability" required/>
+    </li> -->
+    <li class="input full">
+      <label>Description</label>
+      <textarea type="textbox" ng-model="vm.description" ng-value="vehicle.Description" required/></textarea>
+    </li>
+  </ul>
+</section>
+
+<section>
+  <h4>Body</h4>
+  <ul class="cols-2">
+    <li class="dropdown">
+      <label>Body Style</label>
+      <select class="na-select" ng-model="vm.bodyStyle" required>
+        <option value="vehicle.BodyStyle" selected>{{vehicle.BodyStyle}}</option>
+        <option value="bodyStyle1">bodyStyle1</option>
+        <option value="bodyStyle2">bodyStyle2</option>
+        <option value="bodyStyle3">bodyStyle3</option>
+      </select>
+    </li>
+    <li class="dropdown">
+      <label>Body Type</label>
+      <select class="na-select" ng-model="vm.bodyType" required>
+        <option value="vehicle.BodyType" selected>{{vehicle.BodyType}}</option>
+        <option value="bodyType1">bodyType1</option>
+        <option value="bodyType2">bodyType2</option>
+        <option value="bodyType3">bodyType3</option>
+      </select>
+    </li>
+    <li class="dropdown">
+      <label>Trim</label>
+      <select class="na-select" ng-model="vm.trim" required>
+        <option  ng-value="{{ vehicle.Trim}}" selected> {{ vehicle.Trim}} </option>
+        <option value="1">Body Style 1</option>
+        <option value="2">Body Style 2</option>
+      </select>
+    </li>
+    <li class="dropdown">
+      <label>Doors</label>
+      <select class="na-select" ng-model="vm.doorCount" required>
+        <option ng-value="vehicle.DoorCount" selected> {{vehicle.DoorCount}} </option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+      </select>
+    </li>
+  </ul>
+</section>
+<section>
+  <ul class="cols-2">
+    <li>
+      <button type="submit"> Submit Changes</button>
+    </li>
+  </ul>
+</section>
+</form>

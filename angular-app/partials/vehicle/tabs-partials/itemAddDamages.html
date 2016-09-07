@@ -1,0 +1,260 @@
+<header class="page-head">
+  <h1>Add Vehicle Damage</h1>
+</header>
+<loading></loading>
+<div class="page form">
+  <form name="addCondtionReport" ng-submit="vm.addVehicleDamage(vehicle.VIN)" >
+    <section>
+      <ul >
+        <li class="input">
+          <input type="text" ng-model="vm.vehicleVin" ng-value=vehicle.VIN placeholder="{{vehicle.VIN}}" />
+        </li>
+      </ul>
+    </section>
+    <section>
+      <h2>Exterior Damage</h2>
+      <button ng-click="exteriorShow = !exteriorShow; $event.preventDefault(); $event.stopPropagation();">Add Exterior Damage</button>
+
+      <table ng-show="exteriorTableShow">
+        <tr>
+          <th>Damage Location</th>
+          <th>Damage Type</th>
+          <th>Damage Severity</th>
+          <th>Est Repair Cost</th>
+          <th>Damage Comment</th>
+        </tr>
+        <tr ng-repeat="exteriorDamageReport in exteriorDamageReports">
+          <td>{{exteriorDamageReport.location}}</td>
+          <td>{{exteriorDamageReport.damageType}}</td>
+          <td>{{exteriorDamageReport.severity}}</td>
+          <td>{{exteriorDamageReport.estimatedRepairCost}}</td>
+          <td>{{exteriorDamageReport.description}}</td>
+        </tr>
+      </table>
+
+      <ul class="cols-2" ng-show="exteriorShow">
+        <li class="dropdown">
+          <label>Exterior Damage Location</label>
+          <select name="exterior_damage_location" class="na-select" ng-model="vm.exteriorDamageLocation" id="select_year_min">
+            <option value="" selected>Select Damage Location</option>
+            <option value="Head Light">Head Light</option>
+            <option value="Grill">Grill</option>
+            <option value="Windshield">Windshield</option>
+            <option value="Front Bumper">Front Bumper</option>
+            <option value="Left Fender">Left Fender</option>
+            <option value="Left Mirror">Left Mirror</option>
+            <option value="Left Rocker Panel">Left Rocker Panel</option>
+            <option value="Left Rear Door">Left Rear Door</option>
+            <option value="Left Quarter Panel">Left Quarter Panel</option>
+            <option value="Left Bed Side">Left Bed Side</option>
+            <option value="Right Fender">Right Fender</option>
+            <option value="Right Mirror">Right Mirror</option>
+            <option value="Right Rocker Panel">Right Rocker Panel</option>
+            <option value="Right Rear Door">Right Rear Door</option>
+            <option value="Right Quarter Panel">Right Quarter Panel</option>
+            <option value="Right Bed Side">Right Bed Side</option>
+            <option value="Roof">Roof</option>
+            <option value="Trunk">Trunk</option>
+            <option value="Rear Window">Rear Window</option>
+            <option value="Rear Bumper">Rear Bumper</option>
+            <option value="Tail Light">Tail Light</option>
+            <option value="Convertible Top">Convertible Top</option>
+            <option value="Lift Gate">Lift Gate</option>
+            <option value="Tail Gate">Tail Gate</option>
+          </select>
+          <small class="error" ng-show="addCondtionReport.exterior_damage_location.$error.required">This field is required and cannot be left blank</small>
+
+        </li>
+        <li class="dropdown">
+            <label>Exterior Damage Type</label>
+            <select name="exterior_damage_type" class="na-select" ng-model="vm.exteriorDamageType" id="select_year_min">
+              <option value="" selected>Select Damage Type</option>
+              <option value="Bent">Bent</option>
+              <option value="Broken">Broken</option>
+              <option value="Chipped">Chipped</option>
+              <option value="Cracked">Cracked</option>
+              <option value="Creased">Creased</option>
+              <option value="Dented">Dented</option>
+              <option value="Faded">Faded</option>
+              <option value="Hairline Scratch">Hairline Scratch</option>
+              <option value="Hole">Hole</option>
+              <option value="Missing">Missing</option>
+              <option value="Pitted">Pitted</option>
+              <option value="Rusted">Rusted</option>
+              <option value="Scratched">Scratched</option>
+              <option value="Scuff">Scuff</option>
+              <option value="Scratched">Scratched</option>
+              <option value="Scuff">Scuff</option>
+              <option value="Smashed">Smashed</option>
+              <option value="Torn">Torn</option>
+            </select>
+            <small class="error" ng-show="addCondtionReport.exterior_damage_type.$error.required">This field is required and cannot be left blank</small>
+
+          </li>
+        <li class="dropdown">
+          <label>Exterior Damage Severity</label>
+          <select name="exterior_damage_severity" class="na-select" ng-model="vm.exteriorDamageSeverity" id="select_year_min">
+            <option value="" selected>Select Damge Severity</option>
+            <option value="Less than 1">Less than 1"</option>
+            <option value="1-2">1"-2"</option>
+            <option value="3-4">3"-4"</option>
+            <option value="4-6">4"-6"</option>
+            <option value="6-10">6"-10"</option>
+            <option value="10-16">10"-16"</option>
+            <option value="16-24">16"-24"</option>
+            <option value="Greater than 24">Greater than 24"</option>
+          </select>
+          <small class="error" ng-show="addCondtionReport.exterior_damage_severity.$error.required">This field is required and cannot be left blank</small>
+
+        </li>
+        <li class="input">
+          <label>Estimated Repair Cost</label>
+          <input name="estimated_exterior_repair_cost" type="number" ng-model="vm.estimatedExteriorRepairCost" ng-value = "vm.estimatedExteriorRepairCost" placeholder="Exterior Estimated Repair Cost" />
+          <small class="error" ng-show="addCondtionReport.estimated_exterior_repair_cost.$error.required">This field is required and cannot be left blank</small>
+
+        </li>
+        <li class="full text">
+          <label>Damage Description:</label>
+          <textarea name="exterior_damage_comment" ng-model="vm.exteriorDamageComment" ></textarea>
+          <small class="error" ng-show="addCondtionReport.exterior_damage_comment.$error.required">This field is required and cannot be left blank</small>
+
+        </li>
+        <li>
+          <input ng-model="file" type="file">
+        </li>
+
+        <button ng-click="exteriorTableShow = !exteriorTableShow; vm.addExteriorDamage(); $event.preventDefault(); $event.stopPropagation();"> Save Exterior Damage</button>
+
+      </ul>
+    </section>
+    <section>
+      <h2>Interior Damage</h2>
+
+      <button ng-click="interiorShow = !interiorShow; $event.preventDefault(); $event.stopPropagation();">Add Interior Damage</button>
+
+
+      <table ng-show="interiorTableShow">
+        <tr>
+          <th>Damage Location</th>
+          <th>Damage Type</th>
+          <th>Damage Severity</th>
+          <th>Est Repair Cost</th>
+          <th>Damage Comment</th>
+        </tr>
+        <tr ng-repeat="interiorDamageReport in interiorDamageReports">
+          <td>{{interiorDamageReport.location}}</td>
+          <td>{{interiorDamageReport.damageType}}</td>
+          <td>{{interiorDamageReport.severity}}</td>
+          <td>{{interiorDamageReport.estimatedRepairCost}}</td>
+          <td>{{interiorDamageReport.description}}</td>
+        </tr>
+      </table>
+
+      <ul class="cols-2" ng-show="interiorShow">
+        <li class="dropdown">
+          <label>Interior Damage Location</label>
+          <select name="interior_damage_location" class="na-select" ng-model="vm.interiorDamageLocation" id="select_year_min">
+            <option value="" selected>Select Damage Location</option>
+            <option value="Rear View Mirror">Rear View Mirror</option>
+            <option value="Gauges">Gauges</option>
+            <option value="Steering Wheel">Steering Wheel</option>
+            <option value="Air Bag">Air Bag</option>
+            <option value="Shift Knob">Shift Knob</option>
+            <option value="Dash">Dash</option>
+            <option value="Radio">Radio</option>
+            <option value="Console">Console</option>
+            <option value="Glovebox">Glovebox</option>
+            <option value="Headliner">Headliner</option>
+            <option value="Sun Roof">Sun Roof</option>
+            <option value="Lamp">Lamp</option>
+            <option value="Left Front Door Panel">Left Front Door Panel</option>
+            <option value="Left Rear Door Panel">Left Rear Door Panel</option>
+            <option value="Front Left Seat">Front Left Seat</option>
+            <option value="Front Left Carpet">Front Left Carpet</option>
+            <option value="Rear Left Seat">Rear Left Seat</option>
+            <option value="Rear Left Carpet">Rear Left Carpet</option>
+            <option value="Right Front Door Panel">Right Front Door Panel</option>
+            <option value="Right Rear Door Panel">Right Rear Door Panel</option>
+            <option value="Front Right Seat">Front Right Seat</option>
+            <option value="Front Right Carpet">Front Right Carpet</option>
+            <option value="Rear Right Seat">Rear Right Seat</option>
+            <option value="Rear Right Carpet">Rear Right Carpet</option>
+            <option value="Third Row Seat">Third Row Seat</option>
+            <option value="Truck/Cargo">Truck/Cargo</option>
+
+          </select>
+          <small class="error" ng-show="addCondtionReport.interior_damage_location.$error.required">This field is required and cannot be left blank</small>
+
+        </li>
+        <li class="dropdown">
+          <label>Interior Damage Type</label>
+          <select name="interior_damage_type" class="na-select" ng-model="vm.interiorDamageType" id="select_year_min">
+            <option value="" selected>Select Damage Type</option>
+            <option value="Bent">Bent</option>
+            <option value="Broken">Broken</option>
+            <option value="Chipped">Chipped</option>
+            <option value="Cracked">Cracked</option>
+            <option value="Creased">Creased</option>
+            <option value="Dented">Dented</option>
+            <option value="Faded">Faded</option>
+            <option value="Hairline Scratch">Hairline Scratch</option>
+            <option value="Hole">Hole</option>
+            <option value="Missing">Missing</option>
+            <option value="Pitted">Pitted</option>
+            <option value="Rusted">Rusted</option>
+            <option value="Scratched">Scratched</option>
+            <option value="Scuff">Scuff</option>
+            <option value="Scratched">Scratched</option>
+            <option value="Scuff">Scuff</option>
+            <option value="Smashed">Smashed</option>
+            <option value="Torn">Torn</option>
+          </select>
+          <small class="error" ng-show="addCondtionReport.interior_damage_type.$error.required">This field is required and cannot be left blank</small>
+
+        </li>
+        <li class="dropdown">
+          <label>Interior Damage Severity</label>
+          <select name="interior_damage_severity" class="na-select" ng-model="vm.interiorDamageSeverity" id="select_year_min">
+            <option value="" selected>Select Damage Severity</option>
+            <option value="Less than 1">Less than 1"</option>
+            <option value="1-2">1"-2"</option>
+            <option value="3-4">3"-4"</option>
+            <option value="4-6">4"-6"</option>
+            <option value="6-10">6"-10"</option>
+            <option value="10-16">10"-16"</option>
+            <option value="16-24">16"-24"</option>
+            <option value="Greater than 24">Greater tan 24"</option>
+          </select>
+          <small class="error" ng-show="addCondtionReport.interior_damage_severity.$error.required">This field is required and cannot be left blank</small>
+
+        </li>
+        <li class="input">
+          <label>Estimated Repair Cost</label>
+          <input name="estimated_interior_repair_cost" type="number" ng-model="vm.estimatedInteriorRepairCost" ng-value = "vm.estimatedinteriorRepairCost" placeholder="Interior Estimated Repair Cost" />
+          <small class="error" ng-show="addCondtionReport.estimated_interior_repair_cost.$error.required">This field is required and cannot be left blank</small>
+
+        </li>
+        <li class="full text">
+          <label>Damage Comment:</label>
+          <textarea name="interior_damage_comment" ng-model="vm.interiorDamageComment" ></textarea>
+          <small class="error" ng-show="addCondtionReport.interior_damage_comment.$error.required">This field is required and cannot be left blank</small>
+
+        </li>
+        <li>
+          <input ng-model="file" type="file">
+        </li>
+        <button ng-click="interiorTableShow = !interiorTableShow; vm.addInteriorDamage(); $event.preventDefault(); $event.stopPropagation();"> Save Interior Damage</button>
+
+      </ul>
+    </section>
+    <section>
+      <ul>
+        <li class="full">
+          <h1 class="error" ng-if="vm.error_message_submit">{{vm.error_message_submit}}</h1>
+          <button class="na-input-submit blue" type="submit" >Add</button>
+        </li>
+      </ul>
+    </section>
+  </form>
+
+</div>

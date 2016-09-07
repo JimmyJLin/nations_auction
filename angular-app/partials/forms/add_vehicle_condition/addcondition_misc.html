@@ -1,0 +1,125 @@
+<form name="addCondtionReport" ng-submit="vm.addCond()" >
+<section>
+<h2>Add Miscellaneous Details</h2>
+    <ul class="cols-2">
+      <li class="dropdown">
+        <label>Master</label>
+        <select name="master" class="na-select" ng-model="vm.master" id="select_year_min" required>
+          <option value="" selected>Select Num of Master Key</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+        <small class="error" ng-show="addCondtionReport.master.$error.required">This field is required and cannot be left blank</small>
+
+      </li>
+
+      <li class="dropdown">
+        <label>Remote</label>
+        <select name="remote" class="na-select" ng-model="vm.remote" id="select_year_min" required>
+          <option value="" selected>Select Num of Remote Key</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+        <small class="error" ng-show="addCondtionReport.remote.$error.required">This field is required and cannot be left blank</small>
+
+      </li>
+      <li class="dropdown">
+        <label>Valet</label>
+        <select name="valet" class="na-select" ng-model="vm.valet" id="select_year_min" required>
+          <option value="" selected>Select Num of Valet Key</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+        <small class="error" ng-show="addCondtionReport.valet.$error.required">This field is required and cannot be left blank</small>
+
+      </li>
+      <li class="dropdown">
+        <label>Combo</label>
+        <select name="combo" class="na-select" ng-model="vm.combo" id="select_year_min" required>
+          <option value="" selected>Select Num of Combo Key</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+        <small class="error" ng-show="addCondtionReport.combo.$error.required">This field is required and cannot be left blank</small>
+
+      </li>
+      <li class="dropdown">
+        <label>Keyless Go</label>
+        <select name="keyless_go" class="na-select" ng-model="vm.keylessGo" id="select_year_min" required>
+          <option value="" selected>Keyless Go</option>
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+        </select>
+        <small class="error" ng-show="addCondtionReport.keyless_go.$error.required">This field is required and cannot be left blank</small>
+
+      </li>
+
+      <li class="dropdown">
+        <label>Windshield</label>
+        <select name="windshield" class="na-select" ng-model="vm.windshield" id="select_year_min" required>
+          <option value="" selected>Select Windshield Damage</option>
+          <option value="No Damage">No Damage</option>
+          <option value="Chipped">Chipped</option>
+          <option value="Pited">Pited</option>
+          <option value="Cracked">Cracked</option>
+          <option value="Needs Replaced">Needs Replaced</option>
+        </select>
+        <small class="error" ng-show="addCondtionReport.windshield.$error.required">This field is required and cannot be left blank</small>
+
+      </li>
+
+      <li class="dropdown">
+        <label>Owners Manual</label>
+        <select name="owners_manual" class="na-select" ng-model="vm.ownersManual" id="select_year_min" required>
+          <option value="" selected>Owner's Manual</option>
+          <option value="Present">Present</option>
+          <option value="Not Present">Not Present</option>
+        </select>
+        <small class="error" ng-show="addCondtionReport.owners_manual.$error.required">This field is required and cannot be left blank</small>
+
+      </li>
+
+      <li class="dropdown">
+        <label>Odor</label>
+        <select name="odor" class="na-select" ng-model="vm.odor" id="select_year_min" required>
+          <option value="" selected>Odor</option>
+          <option value="None">None</option>
+          <option value="Smoke">Smoke</option>
+          <option value="Foul">Foul</option>
+          <option value="Mold">Mold</option>
+        </select>
+        <small class="error" ng-show="addCondtionReport.odor.$error.required">This field is required and cannot be left blank</small>
+
+      </li>
+
+      <li class="dropdown">
+        <label>Floor Mats</label>
+        <select name="floor_mats" class="na-select" ng-model="vm.floorMats" id="select_year_min" required>
+          <option value="" selected>Floor Mats</option>
+          <option value="1">Yes</option>
+          <option value="2">No</option>
+        </select>
+        <small class="error" ng-show="addCondtionReport.floor_mats.$error.required">This field is required and cannot be left blank</small>
+
+      </li>
+
+<!--      <li class="full footer">
+        <!-- <a class="btn" ng-href="#/vehicle/addcondition_step7">Next</button> --*>
+        <button type="submit" class="btn" id="addConditionMsc">Next</button>
+
+      </li>-->
+    </ul>
+</section>
+</form>

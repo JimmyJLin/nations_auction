@@ -1,0 +1,52 @@
+<div class="toolbar">
+  <div class="inner">
+    <h1><a ng-href="/#/" class="logo">Nations Auction</a></h1>
+    <nav>
+      <ul active-link>
+      <!--    <li><a ng-href="/#/">Home</a></li>-->
+        <li class="vehicles"><a ng-href="/vehicles"><i></i>Vehicles</a></li>
+        <li class="marketplace"><a ng-href="/marketplace"><i></i>Marketplace</a></li>
+        <li class="inventory"><a ng-href="/inventory/vehicles"><i></i>Inventory</a></li>
+        <li class="watchlist"><a ng-href="/watchlist"><i></i>Watchlist</a></li>
+<!--        <li><input tabindex="-1" type="search" /></li>-->
+        <li ng-if="vm.isSignedIn()">
+          <i class="menu" tabindex="-1">Alerts</i>
+          <menu>
+            <ul>
+              <li>Notification Message</li>
+              <li>Notification Message</li>
+              <li>Notification Message</li>
+              <li>Notification Message</li>
+              <li>Notification Message</li>
+              <li>Notification Message</li>
+            </ul>
+          </menu>
+        </li>
+        <li class="profile" ng-if="vm.isSignedIn()">
+          <i class="menu" tabindex="-1">Profile</i>
+          <menu>
+            <ul>
+              <li>Menu Item</li>
+              <li>Menu Item</li>
+              <li>Menu Item</li>
+              <li>Menu Item</li>
+              <li class="signout">Sign Out</li>
+            </ul>
+          </menu>
+        </li>
+        <li class="profile" ng-if="!vm.isSignedIn()">
+          <a class="modal" toggle-modal>Signup / Signin</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+<!--<nav>
+  <ul active-link>
+<!--    <li><a ng-href="/#/">Home</a></li>--*>
+    <li><a ng-href="/#/vehicles">Vehicles</a></li>
+    <li><a ng-href="/#/marketplace">Marketplace</a></li>
+    <li><a ng-href="/#/inventory/vehicles">Inventory</a></li>
+    <li><a ng-href="/#/watchlist">Watchlist</a></li>
+  </ul>
+</nav>-->

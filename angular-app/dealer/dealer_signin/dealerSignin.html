@@ -1,0 +1,7 @@
+<div ng-controller="DealerSigninController as vm">
+  <header class="page-head">
+    <h1 ng-if="!vm.isSignedIn()">Sign in</h1>
+    <h1 ng-if="vm.isSignedIn()">My Account</h1>
+  </header>
+  <div class="signin" ng-include src="'angular-app/partials/login/signin.html'"></div>
+</div>

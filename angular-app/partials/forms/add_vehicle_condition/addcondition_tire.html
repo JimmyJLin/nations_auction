@@ -1,0 +1,120 @@
+<form name="addCondtionReport" ng-submit="vm.addCond()" >
+<section>
+<h2>Add Tire Details</h2>
+    <ul class="cols-2">
+      <li class="dropdown">
+        <label>Tire Match</label>
+        <select name="tire_match" class="na-select" ng-model="vm.tireMatch" id="select_year_min" required>
+          <option value="" selected>Tire Match</option>
+          <option value="1">Yes</option>
+          <option value="2">No</option>
+        </select>
+        <small class="error" ng-show="addCondtionReport.tire_match.$error.required">This field is required and cannot be left blank</small>
+
+      </li>
+
+      <li class="dropdown">
+        <label>Weather Checked</label>
+        <select name="weather_checked" class="na-select" ng-model="vm.weatherChecked" id="select_year_min" required>
+          <option value="" selected>Weather Checked</option>
+          <option value="1">Yes</option>
+          <option value="2">No</option>
+        </select>
+        <small class="error" ng-show="addCondtionReport.weather_checked.$error.required">This field is required and cannot be left blank</small>
+
+      </li>
+
+      <li class="dropdown">
+        <label>Left Front</label>
+        <select name="left_front" class="na-select" ng-model="vm.leftFront" id="select_year_min" required>
+          <option value="" selected>Left Front Tire</option>
+          <option value="New">New</option>
+          <option value="More than 7/32">More than 7/32</option>
+          <option value="4/32 to 7/32">4/32 to 7/32</option>
+          <option value="Less than 4/32">Less than 4/32</option>
+          <option value="Flat">Flat</option>
+          <option value="Missing">Missing</option>
+        </select>
+        <small class="error" ng-show="addCondtionReport.left_front.$error.required">This field is required and cannot be left blank</small>
+
+      </li>
+
+      <li class="dropdown">
+        <label>Right Front</label>
+        <select name="right_front" class="na-select" ng-model="vm.rightFront" id="select_year_min" required>
+          <option value="" selected>Right Front Tire</option>
+          <option value="New">New</option>
+          <option value="More than 7/32">More than 7/32</option>
+          <option value="4/32 to 7/32">4/32 to 7/32</option>
+          <option value="Less than 4/32">Less than 4/32</option>
+          <option value="Flat">Flat</option>
+          <option value="Missing">Missing</option>
+        </select>
+        <small class="error" ng-show="addCondtionReport.right_front.$error.required">This field is required and cannot be left blank</small>
+
+      </li>
+
+      <li class="dropdown">
+        <label>Left Rear</label>
+        <select name="left_rear" class="na-select" ng-model="vm.leftRear" id="select_year_min" required>
+          <option value="" selected>Left Rear Tire</option>
+          <option value="New">New</option>
+          <option value="More than 7/32">More than 7/32</option>
+          <option value="4/32 to 7/32">4/32 to 7/32</option>
+          <option value="Less than 4/32">Less than 4/32</option>
+          <option value="Flat">Flat</option>
+          <option value="Missing">Missing</option>
+        </select>
+        <small class="error" ng-show="addCondtionReport.left_rear.$error.required">This field is required and cannot be left blank</small>
+
+      </li>
+
+      <li class="dropdown">
+        <label>Right Rear</label>
+        <select name="right_rear" class="na-select" ng-model="vm.rightRear" id="select_year_min" required>
+          <option value="" selected>Right Rear Tire</option>
+          <option value="New">New</option>
+          <option value="More than 7/32">More than 7/32</option>
+          <option value="4/32 to 7/32">4/32 to 7/32</option>
+          <option value="Less than 4/32">Less than 4/32</option>
+          <option value="Flat">Flat</option>
+          <option value="Missing">Missing</option>
+        </select>
+        <small class="error" ng-show="addCondtionReport.right_rear.$error.required">This field is required and cannot be left blank</small>
+
+      </li>
+
+      <li class="dropdown">
+        <label>Spare</label>
+        <select name="spare" class="na-select" ng-model="vm.spare" id="select_year_min" required>
+          <option value="" selected>Spare Tire</option>
+          <option value="New">New</option>
+          <option value="More than 7/32">More than 7/32</option>
+          <option value="4/32 to 7/32">4/32 to 7/32</option>
+          <option value="Less than 4/32">Less than 4/32</option>
+          <option value="Flat">Flat</option>
+          <option value="Missing">Missing</option>
+        </select>
+        <small class="error" ng-show="addCondtionReport.spare.$error.required">This field is required and cannot be left blank</small>
+
+      </li>
+
+      <li class="dropdown">
+        <label>Jack</label>
+        <select name="jack" class="na-select" ng-model="vm.jack" id="select_year_min" required>
+          <option value="" selected>Jack</option>
+          <option value="1">Yes</option>
+          <option value="2">No</option>
+        </select>
+        <small class="error" ng-show="addCondtionReport.jack.$error.required">This field is required and cannot be left blank</small>
+
+      </li>
+
+<!--      <li class="full footer">
+        <!-- <a class="btn" ng-href="#/vehicle/addcondition_step5">Next</button> --*>
+        <button type="submit" class="btn" id="addConditionTires">Next</button>
+
+      </li>-->
+    </ul>
+</section>
+  </form>

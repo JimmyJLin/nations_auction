@@ -1,0 +1,19 @@
+<div class="panel"  ng-controller="ModalController as md">
+
+  <h1 class="logo">Nations Auction</h1>
+
+  <div class="signin" ng-controller="DealerSigninController as vm">
+    <div ng-include src="'/angular-app/partials/login/signin.html'"></div>
+  </div>
+
+  <div class="signup" ng-controller="DealerSignupController as vm">
+    <div ng-include src="'/angular-app/partials/login/signup.html'"></div>
+  </div>
+
+  <div class="reset" ng-controller="ResetPasswordController as vm">
+    <div ng-include src="'/angular-app/partials/reset_password/reset_password.html'"></div>
+  </div>
+
+</div>
+
+<div class="mask" toggle-modal></div>

@@ -1,0 +1,17 @@
+<div id="na-{{ auto.naid }}-cr" class="pane">
+  <header class="page-head">
+    <h1>Condition Reports<small>{{conditionReports.length}}</small></h1>
+  </header>
+  <loading></loading>
+  <div class="list">
+
+    <ul>
+      <li ng-repeat="conditionReport in conditionReports  track by $index">
+        <div class="item vehicle" ng-include src="'angular-app/partials/vehicle/condition_report/condition_reports.html'"></div>
+      </li>
+    </ul>
+
+  </div>
+
+
+</div>

@@ -1,0 +1,436 @@
+<div id="panel">
+        <div id="stage">
+
+			<header class="public-site-header">
+                <div class="row">
+                    <div class="small-7 medium-4 columns">
+                        <div class="public-site-header-logo">
+                            <a href="/">
+                                <img src="/img/na-logo-white-red.png" alt="Logo">
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="small-5 medium-8 columns">
+                        <nav class="public-site-header-nav">
+                            <ul class="has-button">
+                                <li><span>Already a Dealer?</span> <a class="desktop-link button-link" href="/Dealer/DealerSignIn">Login</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </header>
+
+            <div class="centered-auction-icon">
+                <div class="row">
+                    <div class="small-12 columns">
+                        <img src="/img/auction-icon-red.png">
+                    </div>
+                </div>
+            </div>
+
+            <main id="main">
+                <div class="row">
+                    <div class="small-12 columns">
+                        <div class="na-section">
+                            <h1 class="centered-text all-caps-text">
+                                Primary Dealership Information
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="small-12 medium-large-3 columns show-for-desktop">
+                        <div class="na-signup-sidebar-widget">
+                            <div class="container">
+                                <h3>Primary Dealership</h3>
+
+
+
+                                <ul class="steps">
+                                    <li><a href="#" id="radioLinkInfo" class="current"><i class="fa fa-check-circle" id="circleDealer" aria-hidden="true"></i> Dealer Information</a></li>
+                                    <li><a href="#" id="radioLinkBanking"><i class="fa fa-circle-o" id="circleBanking" aria-hidden="true"></i> Banking Authorization</a></li>
+                                    <li><a href="#" id="radioLinkFiles"><i class="fa fa-circle-o" id="circleFiles" aria-hidden="true"></i> File Upload</a></li>
+                                </ul>
+
+                                <a href="#" class="na-red-button  centered-text">Add Locations</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="small-12 medium-large-8 columns" id="divDealerInfo">
+                        <form class="na-default-form" id="dealership-signup-form" action="/">
+                            <fieldset>
+                                <div class="row">
+                                    <div class="small-6 columns">
+                                        <label>Full Name</label>
+                                        <input type="text" class="na-input-text" id="txtFullName" placeholder="Full Name" required>
+                                    </div>
+
+                                    <div class="small-6 columns">
+                                        <label>Phone Number</label>
+                                        <input type="text" class="na-input-text" id="txtPhoneNumber" placeholder="Phone Number" required>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="small-6 columns">
+                                        <label>Email Address</label>
+                                        <input type="email" class="na-input-text" id="txtEmail" placeholder="Email Address" required>
+                                    </div>
+
+                                    <div class="small-6 columns">
+                                        <label>User Type</label>
+                                        <select class="na-select" id="ddlUserType" required>
+                                            <option value="0" selected>Administrator</option>
+                                            <option value="1">Manager</option>
+                                            <option value="2">Associate</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="small-12 medium-6 columns">
+                                        <label>Profile Image</label>
+                                        <input type="file" class="na-input-file" required>
+                                    </div>
+
+                                    <div class="small-6 columns">
+                                        <label>Test Email</label>
+                                        <input type="button" value="Send Email" id="btnSendEmail" class="na-red-button button-regular" />
+                                    </div>
+                                </div>
+                            </fieldset>
+
+                            
+
+                            <fieldset>
+                                <div class="row">
+                                    <div class="small-12 medium-6 columns">
+                                        <label>Company Trade or DBA Name</label>
+                                        <input type="text" class="na-input-text" id="txtTradeOrDBAName" placeholder="Trade or DBA Name" required>
+                                    </div>
+
+                                    <div class="small-12 medium-6 columns">
+                                        <label>Legal Name</label>
+                                        <input type="text" class="na-input-text" id="txtLegalName" placeholder="Legal Name (If different)" required>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="small-12 medium-6 columns">
+                                        <label>Date Company Started</label>
+                                        <input type="text" class="na-input-text" id="dtpDateCompanyStarted" placeholder="Date (mm/dd/yyyy)" required>
+                                    </div>
+
+                                    <div class="small-12 medium-6 columns">
+                                        <label>EIN Number</label>
+                                        <input type="text" class="na-input-text" id="txtEINNumber" placeholder="EIN Number" required>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="small-12 medium-6 columns">
+                                        <label>Company Type</label>
+                                        <select class="na-select" id="ddlCompanyType" required>
+                                            <option value="0" disabled selected>Select One</option>
+                                            <option value="1">Sole Proprietorship</option>
+                                            <option value="2">Partnership</option>
+                                            <option value="3">LLC</option>
+                                            <option value="4">LLP</option>
+                                            <option value="5">S-Corp</option>
+                                            <option value="6">C-Corp</option>
+                                            <option value="7">Other</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="small-12 medium-6 columns">
+                                        <label>Industry Type (select all that apply)</label>
+                                        <select class="na-multiselect" multiple="multiple" id="ddlIndustryType" data-placeholder="Industry Type">
+                                            <option value="0">New</option>
+                                            <option value="1">Used</option>
+                                            <option value="2">Leasing</option>
+                                            <option value="3">Wholesale</option>
+                                            <option vlaue="4">Concierge</option>
+                                            <option value="5">Broker</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </fieldset>
+
+                            <fieldset>
+                                <div class="row">
+                                    <div class="small-12 columns">
+                                        <legend>Lot Address</legend>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="small-12 medium-6 columns">
+                                        <input type="text" class="na-input-text" id="txtLotAddress1" placeholder="Address 1" required>
+                                    </div>
+
+                                    <div class="small-12 medium-6 columns">
+                                        <input type="text" class="na-input-text" id="txtLotAddress2" placeholder="Address 2" required>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="small-12 medium-6 columns">
+                                        <input type="text" class="na-input-text" id="txtLotCity" placeholder="City" required>
+                                    </div>
+
+                                    <div class="small-12 medium-6 columns">
+                                        <select class="na-select" id="ddlLotUSState" required>
+                                            <option value="0">AZ</option>
+											<option value="1">KS</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="small-12 medium-6 columns">
+                                        <input type="text" class="na-input-text" id="txtLotZip" placeholder="Zip Code" required>
+                                    </div>
+
+                                    
+                                </div>
+                            </fieldset>
+
+                            <fieldset>
+                                <div class="row">
+                                    <div class="small-12 columns">
+                                        <legend>Mailing Address (Title Address)</legend>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="small-12 medium-6 columns">
+                                        <input type="text" class="na-input-text" id="txtAddress1" placeholder="Address 1" required>
+                                    </div>
+
+                                    <div class="small-12 medium-6 columns">
+                                        <input type="text" class="na-input-text" id="txtAddress2" placeholder="Address 2" required>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="small-12 medium-6 columns">
+                                        <input type="text" class="na-input-text" id="txtCity" placeholder="City" required>
+                                    </div>
+
+                                    <div class="small-12 medium-6 columns">
+                                        <select class="na-select" id="ddlUSState" required>
+                                            <option value="0">AZ</option>
+											<option value="1">KS</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="small-12 medium-6 columns">
+                                        <input type="text" class="na-input-text" id="txtZip" placeholder="Zip Code" required>
+                                    </div>
+
+                                    <div class="small-12 medium-6 columns">
+                                        <input type="button" value="Use Lot Address" id="btnUseLotAddress" class="na-red-button button-regular" />
+                                    </div>
+                                </div>
+                            </fieldset>
+
+                            <fieldset>
+                                <div class="row">
+                                    <div class="small-12 medium-6 columns">
+                                        <label>Dealer Phone Number</label>
+                                        <input type="text" class="na-input-text" id="txtDealerPhoneNumber" placeholder="Phone Number" required>
+                                    </div>
+
+                                    <div class="small-12 medium-6 columns">
+                                        <label>Dealer Fax Number</label>
+                                        <input type="text" class="na-input-text" id="txtDealerFax" placeholder="Fax Number">
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="small-12 medium-6 columns">
+                                        <label>Dealer Email Address</label>
+                                        <input type="email" class="na-input-text" id="txtDealerEmail" placeholder="Email Address" required>
+                                    </div>
+
+                                    <div class="small-12 medium-6 columns">
+                                        <label>Dealer Website</label>
+                                        <input type="text" class="na-input-text" id="txtDealerWebsite" placeholder="Website URL" required>
+                                    </div>
+                                </div>
+                            </fieldset>
+
+                            <fieldset>
+                                <div class="row">
+                                    <div class="small-12 medium-6 columns">
+                                        <label>Buying Credit Limit</label>
+                                        <input type="text" class="na-input-text" id="txtBuyingCreditLimit" placeholder="Credit Limit" required>
+                                    </div>
+                                </div>
+                            </fieldset>
+
+                            <fieldset>
+                                <div class="row">
+                                    <div class="small-12 columns centered-text">
+                                        <input class="na-input-submit" id="btnDealerInfoNext" style="max-width: 370px" type="button" value="Next">
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+
+                    <div class="small-12 medium-large-8 columns" id="divBankingInfo">
+                        <form class="na-default-form" id="dealership-signup-form" action="/">
+                            <fieldset>
+
+
+                                <div class="row">
+                                    <div class="small-6 columns">
+                                        <label>Bank Name</label>
+                                        <input type="text" class="na-input-text" id="txtBankName" placeholder="Bank Name" required>
+                                    </div>
+
+                                    <div class="small-6 columns">
+                                        <label>Bank Representative</label>
+                                        <input type="text" class="na-input-text" id="txtBankRep" placeholder="Bank Representative" required>
+                                    </div>
+                                </div>
+                            </fieldset>
+
+                            <fieldset>
+                                <div class="row">
+                                    <div class="small-12 columns">
+                                        <legend>Bank Address</legend>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="small-12 medium-6 columns">
+                                        <input type="text" class="na-input-text" id="txtBankAddress1" placeholder="Address 1" required>
+                                    </div>
+
+                                    <div class="small-12 medium-6 columns">
+                                        <input type="text" class="na-input-text" id="txtBankAddress2" placeholder="Address 2" required>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="small-12 medium-6 columns">
+                                        <input type="text" class="na-input-text" id="txtBankCity" placeholder="City" required>
+                                    </div>
+
+                                    <div class="small-12 medium-6 columns">
+                                        <select class="na-select" id="ddlBankUSState" required>
+                                            <option value="0">AZ</option>
+											<option value="1">KS</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="small-12 medium-6 columns">
+                                        <input type="text" class="na-input-text" id="txtBankZip" placeholder="Zip Code" required>
+                                    </div>
+
+                                </div>
+                            </fieldset>
+
+                            <fieldset>
+                                <div class="row">
+                                    <div class="small-12 medium-6 columns">
+                                        <label>Routing Number</label>
+                                        <input type="text" class="na-input-text" id="txtBankRoutingNumber" placeholder="Routing Number" required>
+                                    </div>
+
+                                    <div class="small-12 medium-6 columns">
+                                        <label>Account Number</label>
+                                        <input type="text" class="na-input-text" id="txtBankAccountNumber" placeholder="Account Number" required>
+                                    </div>
+                                </div>
+                            </fieldset>
+
+                            <fieldset>
+                                <div class="row">
+                                    <div class="small-12 columns centered-text">
+                                        <input class="na-input-submit" id="btnBankingNext" style="max-width: 370px" type="button" value="Next">
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+
+                    <div class="small-12 medium-large-8 columns" id="divFiles">
+                        <form class="na-default-form" id="dealership-signup-form" action="/">
+                            <fieldset>
+
+
+                                <div class="row">
+                                    <div class="small-12 medium-6 columns">
+                                        <label>Dealer License</label>
+                                        <input type="file" class="na-input-file" required>
+                                    </div>
+
+                                    <div class="small-12 medium-6 columns">
+                                        <label>Dealer License Expiration Date</label>
+                                        <input type="text" class="na-input-text" id="dtpDealerLicenseExpire" placeholder="Date (mm/dd/yyyy)" required>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="small-12 medium-6 columns">
+                                        <label>Insurance</label>
+                                        <input type="file" class="na-input-file" required>
+                                    </div>
+
+                                    <div class="small-12 medium-6 columns">
+                                        <label>Insurance Expiration Date</label>
+                                        <input type="text" class="na-input-text" id="dtpDealerInsuranceExpire" placeholder="Date (mm/dd/yyyy)" required>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="small-12 medium-6 columns">
+                                        <label>Security Bond</label>
+                                        <input type="file" class="na-input-file" required>
+                                    </div>
+
+                                    <div class="small-12 medium-6 columns">
+                                        <label>Security Bond Expiration Date</label>
+                                        <input type="text" class="na-input-text" id="dtpSecurityBondExpire" placeholder="Date (mm/dd/yyyy)" required>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="small-12 medium-6 columns">
+                                        <label>Dealership Logo</label>
+                                        <input type="file" class="na-input-file" required>
+                                    </div>
+                                </div>
+                            </fieldset>
+
+                            <fieldset>
+                                <div class="row">
+                                    <div class="small-12 columns centered-text">
+                                        <input class="na-input-submit" id="btnCompleteRegistration" style="max-width: 370px" type="button" value="Complete Registration" title="Please aggree to the Terms and Conditions." disabled>
+
+                                        <p class="small-text centered-text">
+                                            <i class="fa fa-square" id="chkTermsAndConditions" style="cursor: pointer" aria-hidden="true"></i> &nbsp;I agree to the <a href="#">Terms & Conditions</a> of Nations Auction
+                                        </p>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+
+                </div>
+            </main>
+
+
+        </div><!--end of stage-->
+
+        <div ng-include src="'app/views/public/shared/footer.html'"></div>
+    </div>
+</div>
+</div>

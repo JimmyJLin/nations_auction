@@ -1,0 +1,40 @@
+<header class="page-head">
+  <h1>Create Account</h1>
+</header>
+<div class="page form">
+
+  <div ng-if='vm.message' class='alert success' role='alert'>
+    <p>{{ vm.message }}</p>
+  </div>
+  <div ng-if='vm.error' class='alert error' role='alert'>
+    <p>{{ vm.error }}</p>
+  </div>
+
+  <form ng-hide="vm.message" name="register" id="dealer-sign-up-normal" ng-submit="vm.register()">
+    <ul>
+      <li>
+        <label>Enter Your Email</label>
+        <small class="error" ng-show="register.email.$error.pattern">Please enter a valid email address</small>
+        <input name="email" class="form-control" type="email" class="" id="dealer-email" ng-model="vm.email" placeholder="yourname@email.com"  ng-pattern="vm.EMAIL_REGEXP" required />
+      </li>
+      <li>
+        <label>Create a Password</label>
+        <small class="error" ng-show="register.password.$error.minlength">Your password should have minimum of 6 digits.</small>
+        <small class="error" ng-show="register.password.$error.maxlength">Your password can have maximum of 16 digits.</small>
+        <small class="error" ng-show="register.password.$error.pattern">Password should contain at least one number and one UpperCase character</small>
+        <input type="password" name="password" class="" id="dealer-password" ng-model="vm.password" placeholder="Create a password" ng-pattern="vm.PASS_REGEXP" ng-minlength="6" ng-maxlength="16" required />
+        <input type="password" class="na-input-text" id="dealer-password-repeat" ng-model="vm.passwordRepeat"  placeholder="Confirm your password" required />
+      </li>
+      <li>
+        <button class="" id="btnSignup" type="submit" value="Sign Up">Create an account</button>
+      </li>
+      <li>
+        <p>Already a member?
+          <a ng-if="md.isModal" sign-in>Sign in</a></p>
+          <a ng-if="!md.isModal" ng-href="/dealer/dealersignin" id="forgot">Sign in</a>
+        </p>
+      </li>
+    </ul>
+  </form>
+
+</div>

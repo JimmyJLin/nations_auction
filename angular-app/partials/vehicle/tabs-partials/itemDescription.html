@@ -1,0 +1,46 @@
+<button ng-click="show=true">Edit</button>
+
+<ul ng-hide="show">
+      <li><label>Item Id:</label> {{ vehicle.ItemGuid }} </li>
+      <li><label>Item Name:</label> {{ vehicle.ItemName }} </li>
+      <li><label>Date Created:</label> {{ vehicle.DateCreated }} </li>
+      <li><label>Date Last Modified:</label> {{ vehicle.DateLastModified }} </li>
+      <li><label>Is Active:</label> {{ vehicle.IsActive }} </li>
+      <li><label>VIN:</label> {{ vehicle.VIN }} </li>
+      <li><label>Year:</label> {{ vehicle.Year}} </li>
+      <li><label>Make:</label> {{ vehicle.Make}} </li>
+      <li><label>Model:</label> {{ vehicle.Model}} </li>
+      <li><label>Body Type:</label> {{ vehicle.BodyType}} </li>
+      <li><label>Description:</label> {{ vehicle.Description}} </li>
+      <li><label>Price:</label> {{ vehicle.Price}} </li>
+      <li><label>Owner:</label> {{ vehicle.OwnerGuid}} </li>
+      <li><label>Trim:</label> {{ vehicle.Trim}} </li>
+      <li><label>Body Style:</label> {{ vehicle.BodyStyle}} </li>
+      <li><label>Vehicle Style:</label> {{ vehicle.VehicleStyle}} </li>
+      <li><label>Vehicle Type:</label> {{ vehicle.VehicleType}} </li>
+      <li><label>Item Number:</label> {{ vehicle.ItemNumber}} </li>
+      <li><label>Mileage:</label> {{ vehicle.Milage}} </li>
+      <li><label>Location:</label> {{ vehicle.Location}} </li>
+      <li><label>Inventory Status:</label> {{ vehicle.InventoryStatus}} </li>
+      <li><label>Date Added:</label> {{ vehicle.DateAdded }} </li>
+      <li><label>Exterior Color:</label> {{ vehicle.ExteriorColor}} </li>
+      <li><label>Interior Color:</label> {{ vehicle.InteriorColor}} </li>
+      <li><label>Search Color:</label> {{ vehicle.SearchColor}} </li>
+      <li><label>Seat Cover:</label> {{ vehicle.SeatCovering}} </li>
+      <li><label>Door:</label> {{ vehicle.DoorCount}} </li>
+      <li><label>Engine:</label> {{ vehicle.Engine}} </li>
+      <li><label>Transmission:</label> {{ vehicle.Transmission}} </li>
+      <li><label>Drivetrain:</label> {{ vehicle.Drivetrain}} </li>
+      <li><label>FuelType:</label> {{ vehicle.FuelType}} </li>
+      <li><label>Brakes:</label> {{ vehicle.Brakes}} </li>
+      <li><label>Title Status:</label> {{ vehicle.TitleStatus}} </li>
+      <li><label>Title Date:</label> {{ vehicle.TitleDate}} </li>
+      <li><label>Full Warranty:</label> {{ vehicle.FullWarranty}} </li>
+      <li><label>Drivetrain Warranty:</label> {{ vehicle.DrivetrainWarranty}} </li>
+      <li><label>Additional Warranty:</label> {{ vehicle.AdditionalWarranty}} </li>
+      <li><label>Certified Pre-Owned:</label> {{ vehicle.CertifiedPreOwned}} </li>
+      <li><label>Guaranteed Financing:</label> {{ vehicle.GuaranteedFinancing}} </li>
+    </ul>
+
+
+    <div ng-include src="'angular-app/partials/forms/add_vehicle_vin/vehicle_add_by_vin_basic_edit.html'"></div>

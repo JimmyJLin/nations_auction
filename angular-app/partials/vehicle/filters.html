@@ -1,0 +1,74 @@
+<ul><li class="dropdown">
+  <label>Filter By</label>
+  Year
+
+  <select class="na-select" ng-model="search.Year">
+    <option value="Year" selected>Year</option>
+    <option value="2004">2004</option>
+    <option value="2005">2005</option>
+    <option value="2012">2012</option>
+    <option value="2013">2013</option>
+    <option value="2014">2014</option>
+    <option value="2017">2017</option>
+  </select>
+
+  Make
+  <select class="na-select" ng-model="search.Make">
+    <option value="" selected>All</option>
+    <option value="Toyota">Toyota</option>
+    <option value="Ford">Ford</option>
+    <option value="Chevrolet">Chevrolet</option>
+  </select>
+
+  Vehicle Type
+  <select class="na-select" ng-model="search.VehicleType">
+    <option value="">All</option>
+    <option value="New">New</option>
+    <option value="Used">Used</option>
+    <option value="Certified%Pre-Owned">Certified Pre-Owned</option>
+    <option value="Salvage">Salvage</option>
+  </select>
+
+  Inventory status
+  <select class="na-select" ng-model="search.InventoryStatus">
+    <option value="">All</option>
+    <option value="Not Ready to List">Not Ready to List</option>
+    <option value="Reconditioning">Reconditioning</option>
+    <option value="In Detail">In Detail</option>
+    <option value="Needs Photos">Needs Photos</option>
+    <option value="Needs Condition Report">Needs Condition Report</option>
+    <option value="Needs Pricing">Needs Pricing</option>
+    <option value="Ready to List">Ready to List</option>
+    <option value="In Marketplace">In Marketplace</option>
+    <option value="Sold">Sold</option>
+    <option value="Unsold">Unsold</option>
+    <option value="Loaner/Dealership Vehicle">Loaner/Dealership Vehicle</option>
+    <option value="Off Site">Off Site</option>
+  </select>
+
+  <!-- Marketplace Status -->
+  <!-- <select class="na-select" ng-model="search.IsActive">
+    <option value="">All</option>
+    <option value="true">In Market</option>
+    <option value="false">Not in the Market</option>
+  </select> -->
+
+</li></ul>
+
+<ul><li class="dropdown">
+  <label>Sort By</label>
+  <select class="na-select" ng-model="sortBy">
+    <option value="Year" selected>Year</option>
+    <option value="Make">Make</option>
+    <option value="Model">Model</option>
+  </select>
+</li></ul>
+
+
+  <label>Search By</label>
+  <input placeholder="Vin" ng-model="search.VIN">
+  <input placeholder="Year" ng-model="search.Year">
+  <input placeholder="Item Number" type="text" ng-model="search.ItemGuid">
+  <input placeholder="Make" type="text" ng-model="search.Make">
+  <input placeholder="Model" type="text" ng-model="search.Model">
+

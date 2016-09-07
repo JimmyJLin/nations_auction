@@ -1,0 +1,51 @@
+<div class="page form">
+  <div ng-if='vm.message' class='alert success' role='alert'>
+    <p>{{ vm.message }}</p>
+  </div>
+  <div ng-if='vm.error' class='alert error' role='alert'>
+    <p>{{ vm.error }}</p>
+  </div>
+
+  <!-- signin form -->
+  <form ng-if="!vm.isSignedIn()" ng-hide="vm.message" name="signin" ng-submit="vm.signin()">
+    <ul>
+      <li>
+        <label>Your Email</label>
+        <small class="error" ng-show="signin.email.$error.pattern">Please enter a valid email address</small>
+        <input name="email" class="form-control" type="email" class="" id="dealer-email" ng-model="vm.email" placeholder="yourname@email.com"  ng-pattern="vm.EMAIL_REGEXP" required />
+      </li>
+      <li>
+        <label>Your Password
+          <a ng-if="md.isModal" reset-password id="forgot">Forgot Password?</a>
+          <a ng-if="!md.isModal" ng-href="/dealer/resetpassword" id="forgot">Forgot Password?</a>
+       </label>
+        <small class="error" ng-show="signin.password.$error.minlength">Your password should have minimum of 6 digits.</small>
+        <small class="error" ng-show="signin.password.$error.maxlength">Your password can have maximum of 16 digits.</small>
+        <input type="password" name = "password" class="form-control" id="dealer-password" ng-model="vm.password" placeholder="Enter your password" ng-minlength="6" ng-maxlength="16" required />
+
+      </li>
+
+      <!-- spinner for loading -->
+      <loading></loading>
+
+      <li>
+        <button class="" id="btnLogIn" type="submit" value="Sign In">Sign In</button>
+      </li>
+      <li>
+        <p >New to Nations Auction?
+          <a ng-if="md.isModal" sign-up >Create an Account</a>
+          <a ng-if="!md.isModal" ng-href="/dealer/dealersignup" id="forgot">Create an Account</a>
+        </p>
+      </li>
+    </ul>
+  </form>
+
+  <!-- signin success -->
+  <form ng-submit="vm.signout()" ng-if="vm.isSignedIn()">
+    <ul>
+      <li><h2>You successfully signed in.</h2></li>
+      <li><button class="btn btn-danger">Sign Out</button></li>
+    </ul>
+  </form>
+
+</div>
